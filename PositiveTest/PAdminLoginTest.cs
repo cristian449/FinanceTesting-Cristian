@@ -7,7 +7,7 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace NegativeAdmin
+namespace PositiveAdmin
 {
     class PAdminLoginTest
     {
@@ -21,7 +21,7 @@ namespace NegativeAdmin
         }
 
         [Test]
-        public void FailAdminLogin()
+        public void SuccesfulAdminLogin()
         {
             driver.Url = ("https://localhost:7130/Accounts/Login");
 
@@ -35,7 +35,7 @@ namespace NegativeAdmin
 
             emailField.SendKeys("TestAdmin@gmail.com");
             passwordField.SendKeys("Admin@123");
-            adminkeyField.SendKeys(" ");
+            adminkeyField.SendKeys("Admin");
             Thread.Sleep(2000);
             //No Id yet
             driver.FindElement(By.Id("LoginButton")).Click();
