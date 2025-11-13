@@ -7,9 +7,9 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace SeleniumC_
+namespace SeleniumNegativeTests
 {
-    class NUnitTest
+    class NAdminLoginTest
     {
         public ChromeDriver driver;
 
@@ -23,13 +23,19 @@ namespace SeleniumC_
         [Test]
         public void OpenappTest()
         {
-            driver.Url = ("https://Google.com");
+            driver.Url = ("https://localhost:7130/Accounts/Login");
+
+            driver.FindElement(By.Id("Email"))
+
+
+
         }
 
         [TearDown]
         public void EndTest()
         {
             driver.Quit();
+            driver.Dispose();
         }
     }
 }
